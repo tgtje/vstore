@@ -1,5 +1,8 @@
 # Vstore
 
+
+php 8.1 and up !!!  use iso standards in main system language file ( LC > nl_NL, de_DE  etc.....)
+
 [![Join the chat at https://gitter.im/e107inc/vstore](https://badges.gitter.im/e107inc/vstore.svg)](https://gitter.im/e107inc/vstore?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 A simple shopping cart solution for e107 v2.x Bootstrap CMS. 
 
