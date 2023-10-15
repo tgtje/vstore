@@ -40,7 +40,7 @@
 	</tr>
 	<tr>
 		<td style="width: 33.3%; vertical-align:top">
-			<h5>Billing</h5>
+			<h5>{LAN=VSTORE_4022}</h5>
 			{ORDER_MERCHANT_INFO: line}
 			{BILLING: firstname} {BILLING: lastname}<br />
 			{BILLING: company}
@@ -50,7 +50,7 @@
 		</td>
 		
 		<td style="width: 33.3%; vertical-align:top">
-			<h5>Shipping</h5>
+			<h5>{LAN=VSTORE_4017}</h5>
 			{SHIPPING: firstname} {SHIPPING: lastname}<br />
 			{SHIPPING: company}
 			{SHIPPING: address}<br />
@@ -62,16 +62,19 @@
 			<h5>{INVOICE_DATA: info_title}</h5>
 			<table style="width: 100%;">
 			<tr>
-				<td>Order #:</td><td class="text-right">{ORDER_DATA: order_ref}</td>
+				<td>{LAN=VSTORE_2046} #:</td><td class="text-right">{ORDER_DATA: order_invoice_nr}</td>
 			</tr>
 			<tr>
-				<td>Order date:</td><td class="text-right">{ORDER_DATA: order_date}</td>
+				<td>{LAN=VSTORE_2047} #:</td><td class="text-right">{ORDER_DATA: order_ref}</td>
 			</tr>
 			<tr>
-				<td>Payment method:</td><td class="text-right">{ORDER_DATA: order_gateway}</td>
+				<td>{LAN=VSTORE_2048} :</td><td class="text-right">{ORDER_DATA: order_date}</td>
 			</tr>
 			<tr>
-				<td>Due by:</td><td class="text-right">{INVOICE_DATA: payment_deadline}	
+				<td>{LAN=VSTORE_4014} :</td><td class="text-right">{ORDER_DATA: order_gateway}</td>
+			</tr>
+			<tr>
+				<td>{LAN=VSTORE_2049} :</td><td class="text-right">{INVOICE_DATA: payment_deadline}	
 			</tr>
 			</table>	
 		</td>
@@ -134,12 +137,12 @@ $VSTORE_INVOICE_TEMPLATE['invoice_items']['header'] = '
 <h2>{INVOICE_DATA: title}</h2>
 <table class="table table-striped table-bordered">
 <tr>
-	<th style="width: 5%; text-align:center; "><b>No.</b></th>
-	<th style="width: 45%; text-align:left;"><b>Product</b></th>
+	<th style="width: 5%; text-align:center; "><b>{LAN=VSTORE_3060}</b></th>
+	<th style="width: 45%; text-align:left;"><b>{LAN=VSTORE_2001}</b></th>
 
-	<th style="width: 15%; text-align:right; "><b>Unit Price</b></th>
-	<th style="width: 10%; text-align:right; "><b>Qty</b></th>
-	<th style="width: 15%; text-align:right;"><b>Amount</b></th>
+	<th style="width: 15%; text-align:right; "><b>{LAN=VSTORE_3023}</b></th>
+	<th style="width: 10%; text-align:right; "><b>{LAN=VSTORE_4008}</b></th>
+	<th style="width: 15%; text-align:right;"><b>{LAN=VSTORE_3025}</b></th>
 </tr>
 ';
 
@@ -156,13 +159,13 @@ $VSTORE_INVOICE_TEMPLATE['invoice_items']['footer'] = '
 <tr>
 	<td></td>
 	<td></td>
-	<td colspan="2" style="text-align:right"><b>Subtotal</b></td>
+	<td colspan="2" style="text-align:right"><b>{LAN=VSTORE_2010}</b></td>
 	<td style="text-align:right;">{CART_DATA: sub_total}</td>
 </tr>
 <tr>
 	<td></td>
 	<td></td>
-	<td colspan="2" style="text-align:right"><b>Shipping</b></td>
+	<td colspan="2" style="text-align:right"><b>{LAN=VSTORE_3026}</b></td>
 	<td style="text-align:right;">{CART_DATA: shipping_total}</td>
 </tr>
 {INVOICE_COUPON}
@@ -170,7 +173,7 @@ $VSTORE_INVOICE_TEMPLATE['invoice_items']['footer'] = '
 <tr>
 	<td></td>
 	<td></td>
-	<td colspan="2" style="border-top: 1px solid #cccccc; font-size: 1.5em; text-align:right"><b>Total</b></td>
+	<td colspan="2" style="border-top: 1px solid #cccccc; font-size: 1.5em; text-align:right"><b>{LAN=VSTORE_ADMIN_4018}</b></td>
 	<td style="text-align:right; border-top: 1px solid #cccccc; font-size: 1.5em;"><b>{CART_DATA: grand_total}</b></td>
 </tr>
 </table>
@@ -180,7 +183,7 @@ $VSTORE_INVOICE_TEMPLATE['invoice_items']['coupon'] = '
 <tr>
 	<td></td>
 	<td></td>
-	<td>Coupon: <b>[x]</b></td>
+	<td>Coupon Code :<b>[x]</b></td>
 	<td style="text-align:right;">[y]</td>
 </tr>
 ';
@@ -190,11 +193,11 @@ $VSTORE_INVOICE_TEMPLATE['invoice_items']['tax'] = '
 <tr>
 	<td ></td>
 	<td ></td>
-	<td colspan="2" style="text-align:right;"><b>Tax ([x])</b></td>
+	<td colspan="2" style="text-align:right;"><b>'.LAN_VSTORE_4029.' ([x])</b></td>
 	<td style="text-align:right;">[y]</td>
 </tr>
 ';
-
+//new lan not possible; also pdf/print issue
 
 $VSTORE_INVOICE_TEMPLATE['display'] = '
 <html lang="en">
@@ -209,17 +212,13 @@ table.table{ border-collapse:collapse; border-spacing:0; width:100%; }
 border:1px solid #DDD; }
 .table>thead>tr>th,.table>tbody>tr>th,.table>tfoot>tr>th,.table>thead>tr>td,.table>tbody>tr>td,.table>tfoot>tr>td{ padding:8px;
 line-height:1.42857; vertical-align:top; border-top:1px solid #DDD;}											
-.vstore-invoice-wrapper {  padding:10px; width: 93%; max-width:1000px; background-color: #FFFFFF; border-radius: 5px; font-family: helvetica,arial }
-.vstore-invoice-table { color: rgba(0,0,0,0.9) !important; width: 100%; }
+.vstore-invoice-wrapper { padding:10px; width: 93%; max-width:1000px; background-color: #FFFFFF; border-radius: 5px; font-family: helvetica,arial }
+.vstore-invoice-table { width: 100%; }
 .vstore-invoice-header { }
 .vstore-invoice-sitelogo { float: left; margin-right: 10px; }
 .vstore-invoice-sitename { vertical-align: middle; line-height: 80px; font-size: 1.8em; }
 .vstore-invoice-body { }
 .vstore-invoice-footer { }
-.vstore-invoice-wrapper,
-.vstore-invoice-table,
-.vstore-invoice-body .table th,
-.vstore-invoice-body .table td { color: rgba(0,0,0,0.85) !important; }
 .text-right { text-align: right } 
 </style>
 <body>

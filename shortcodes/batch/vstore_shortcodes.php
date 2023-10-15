@@ -106,17 +106,17 @@
 			$actions = array(
 				sprintf('<a href="%s">%s</a>',
 					e107::url('vstore', 'dashboard_action', array('dash' => 'orders', 'action' => 'view', 'id' => $this->var['order_invoice_nr'])),
-					'View details')
+				LAN_VSTORE_2023)
 			);
 
 			if ($cancellable)
 			{
 				$actions[] = sprintf('<a href="%s">%s</a>',
 					e107::url('vstore', 'dashboard_action', array('dash' => 'orders', 'action' => 'cancel', 'id' => $this->var['order_invoice_nr'])),
-					'Cancel order');
+					LAN_VSTORE_2024);
 			}
 
-			return e107::getForm()->button('order_actions', $actions, 'dropdown', 'Actions', array('class' => 'btn-default btn-secondary'));
+			return e107::getForm()->button('order_actions', $actions, 'dropdown', LAN_VSTORE_4021 , array('class' => 'btn-default btn-secondary'));
 		}
 
 		/**
@@ -299,7 +299,7 @@
 							}
 							else
 							{
-								$linktext = 'Download (will be available once the payment has been received)';
+								$linktext = LAN_VSTORE_3036;
 							}
 							$text .= '' . sprintf('<div>%s<br/><a href="%s">%s</a></div><br/>',
 									$item['description'],
@@ -358,7 +358,7 @@
 					}
 					else
 					{
-						$linktext = 'Download (will be available once the payment has been received)';
+						$linktext = LAN_VSTORE_3036;
 					}
 					$desc .= '<br/><a href="'.e107::url('vstore', 'download', array('item_id' => $item['id']), array('mode'=>'full')).'">'.$linktext.'</a>';
 				}
@@ -985,7 +985,7 @@
 		{
 			$weight = $this->var['item_weight'];
 			if ($weight <= 0) return '';
-			return 'Weight: ' . $weight . $this->vpref['weight_unit'];
+			return LAN_VSTORE_041 . $weight . $this->vpref['weight_unit'];
 		}
 
 
@@ -1088,7 +1088,7 @@
 					$text = $frm->text('ship[phone]', $this->var['ship']['phone'], 15, array('placeholder'=>'Phone number', 'required'=>0));
 					break;
 				case 'ship_notes':
-					$text = $frm->textarea('ship[notes]', $this->var['ship']['notes'], 4, null, array('placeholder'=>'Special notes for delivery.', 'required'=>0, 'size'=>'large'));
+					$text = $frm->textarea('ship[notes]', $this->var['ship']['notes'], 4, null, array('placeholder'=>LAN_VSTORE_3030, 'required'=>0, 'size'=>'large'));
 					break;
 			}
 			return $text;
@@ -1119,43 +1119,43 @@
 			switch($key)
 			{
 				case 'cust_firstname':
-					$text = $frm->text('cust[firstname]', $this->var['cust']['firstname'], 100, array('placeholder'=>'First Name', 'required'=>1));
+					$text = $frm->text('cust[firstname]', $this->var['cust']['firstname'], 100, array('placeholder'=>LAN_VSTORE_3001, 'required'=>1));
 					break;
 				case 'cust_lastname':
-					$text = $frm->text('cust[lastname]', $this->var['cust']['lastname'], 100, array('placeholder'=>'Last Name', 'required'=>1));
+					$text = $frm->text('cust[lastname]', $this->var['cust']['lastname'], 100, array('placeholder'=>LAN_VSTORE_3002, 'required'=>1));
 					break;
 				case 'cust_company':
-					$text = $frm->text('cust[company]', $this->var['cust']['company'], 200, array('placeholder'=>'Company'));
+					$text = $frm->text('cust[company]', $this->var['cust']['company'], 200, array('placeholder'=>LAN_VSTORE_3003));
 					break;
 				case 'cust_vat_id':
-					$text = $frm->text('cust[vat_id]', $this->var['cust']['vat_id'], 50, array('placeholder'=>'VAT ID'));
+					$text = $frm->text('cust[vat_id]', $this->var['cust']['vat_id'], 50, array('placeholder'=>LAN_VSTORE_3004));
 					break;
 				case 'cust_taxcode':
-					$text = $frm->text('cust[taxcode]', $this->var['cust']['taxcode'], 50, array('placeholder'=>'Tax code'));
+					$text = $frm->text('cust[taxcode]', $this->var['cust']['taxcode'], 50, array('placeholder'=>LAN_VSTORE_3005));
 					break;
 				case 'cust_address':
-					$text = $frm->text('cust[address]', $this->var['cust']['address'], 200, array('placeholder'=>'Address', 'required'=>1));
+					$text = $frm->text('cust[address]', $this->var['cust']['address'], 200, array('placeholder'=>LAN_VSTORE_3006, 'required'=>1));
 					break;
 				case 'cust_city':
-					$text = $frm->text('cust[city]', $this->var['cust']['city'], 100, array('placeholder'=>'Town/City', 'required'=>1));
+					$text = $frm->text('cust[city]', $this->var['cust']['city'], 100, array('placeholder'=>LAN_VSTORE_3007, 'required'=>1));
 					break;
 				case 'cust_state':
-					$text = $frm->text('cust[state]', $this->var['cust']['state'], 100, array('placeholder'=>'State/Region', 'required'=>1));
+					$text = $frm->text('cust[state]', $this->var['cust']['state'], 100, array('placeholder'=>LAN_VSTORE_3008, 'required'=>1));
 					break;
 				case 'cust_zip':
-					$text = $frm->text('cust[zip]', $this->var['cust']['zip'], 15, array('placeholder'=>'Zip/Postcode', 'required'=>1));
+					$text = $frm->text('cust[zip]', $this->var['cust']['zip'], 15, array('placeholder'=>LAN_VSTORE_3009, 'required'=>1));
 					break;
 				case 'cust_country':
-					$text = $frm->country('cust[country]', $this->var['cust']['country'], array('placeholder'=>'Select Country...', 'required'=>1));
+					$text = $frm->country('cust[country]', $this->var['cust']['country'], array('placeholder'=>LAN_VSTORE_3011, 'required'=>1));
 					break;
 				case 'cust_email':
-					$text = $frm->email('cust[email]', $this->var['cust']['email'], 100, array('placeholder'=>'Email address', 'required'=>1));
+					$text = $frm->email('cust[email]', $this->var['cust']['email'], 100, array('placeholder'=>LAN_VSTORE_3012, 'required'=>1));
 					break;
 				case 'cust_phone':
-					$text = $frm->text('cust[phone]', $this->var['cust']['phone'], 15, array('placeholder'=>'Phone number', 'required'=>0));
+					$text = $frm->text('cust[phone]', $this->var['cust']['phone'], 15, array('placeholder'=>LAN_VSTORE_3014, 'required'=>0));
 					break;
 				case 'cust_fax':
-					$text = $frm->text('cust[fax]', $this->var['cust']['fax'], 15, array('placeholder'=>'Fax number', 'required'=>0));
+					$text = $frm->text('cust[fax]', $this->var['cust']['fax'], 15, array('placeholder'=>LAN_VSTORE_3015, 'required'=>0));
 					break;
 				case 'add_field0':
 				case 'add_field1':
@@ -1187,7 +1187,7 @@
 					break;
 
 				case 'billing_title':
-					$text = (vartrue($this->var['order_use_shipping']) ? 'Billing address' : 'Billing & Shipping address');
+					$text = (vartrue($this->var['order_use_shipping']) ? LAN_VSTORE_3020 : LAN_VSTORE_3082);
 					break;
 
 				case 'ship_country':
@@ -1509,9 +1509,9 @@
 		function sc_cart_checkout_button()
 		{
 			$text = '<a href="'.e107::url('vstore','checkout').'" id="cart-checkout"  class="btn btn-success">
-		                            Checkout '.$this->tp->toGlyph('fa-play').'
+		                            '.LAN_VSTORE_2008.' '.$this->tp->toGlyph('fa-play').'
 		                        </a>
-		                        <button id="cart-qty-submit" style="display:none" type="submit" class="btn btn-warning">Re-Calculate</button>
+		                        <button id="cart-qty-submit" style="display:none" type="submit" class="btn btn-warning">'.LAN_VSTORE_4036.'</button>
 
 		';
 
@@ -1526,7 +1526,7 @@
 
 			return '
 		<a href="'.$link.'" class="btn btn-default btn-secondary">
-		'.e107::getParser()->toGlyph('fa-shopping-cart').' Continue Shopping
+		'.e107::getParser()->toGlyph('fa-shopping-cart').' '.LAN_VSTORE_2013.'
 		</a>';
 		}
 
@@ -1542,8 +1542,8 @@
 		{
 			$frm = e107::getForm();
 			$text = '<div class="form-inline d-flex">';
-			$text .= $frm->label('Coupon code:', 'cart_coupon_code');
-			$text .= '&nbsp;' . $frm->text('cart_coupon_code', $this->var['cart_coupon']['code'], 50, array('placeholder' => 'Enter the coupon code if available', 'size' => 'large'));
+			$text .= $frm->label(LAN_VSTORE_ADMIN_2003, 'cart_coupon_code');
+			$text .= '&nbsp;' . $frm->text('cart_coupon_code', $this->var['cart_coupon']['code'], 50, array('placeholder' => LAN_VSTORE_2012, 'size' => 'large'));
 			$text .= '</div>';
 			return $text;
 		}
@@ -1566,7 +1566,7 @@
 				return "<span class='label label-danger badge bg-danger vstore-item-avail-".$this->var['item_id']."'>".$this->captionOutOfStock."</span>";
 			}
 
-			return "<span class='label label-success badge bg-success vstore-item-avail-".$this->var['item_id']."'>In Stock</span>";
+			return "<span class='label label-success badge bg-success vstore-item-avail-".$this->var['item_id']."'>".LAN_VSTORE_002."</span>";
 		}
 
 
@@ -1721,7 +1721,7 @@
 					}
 					else
 					{
-						$linktext = 'Download (will be available once the payment has been received)';
+						$linktext = LAN_VSTORE_3036;
 					}
 					$desc .= '<br/><a href="'.e107::url('vstore', 'download', array('item_id' => $item['id']), array('mode'=>'full')).'">'.$linktext.'</a>';
 				}
