@@ -2,6 +2,9 @@
 /**
  * Adminarea module coupons
  */
+e107::lan('vstore',false, true);
+e107::lan('vstore',true, true);
+ 
 class vstore_coupons_ui extends e_admin_ui
 {
 
@@ -19,7 +22,7 @@ class vstore_coupons_ui extends e_admin_ui
 	//	protected $sortParent      = 'somefield_parent';
 	//	protected $treePrefix      = 'somefield_title';
 
-		protected $tabs				= array('General', 'Restrictions', 'Limits'); // Use 'tab'=>0  OR 'tab'=>1 in the $fields below to enable.
+		protected $tabs				= array(LAN_GENERAL,LAN_VSTORE_ADMIN_2027, LAN_VSTORE_ADMIN_2028); // Use 'tab'=>0  OR 'tab'=>1 in the $fields below to enable.
 
 	//	protected $listQry      	= "SELECT * FROM `#tableName` WHERE field != '' "; // Example Custom Query. LEFT JOINS allowed. Should be without any Order or Limit.
 
@@ -28,19 +31,19 @@ class vstore_coupons_ui extends e_admin_ui
 		protected $fields 		= 	array (  'checkboxes' =>   array ( 'title' => '', 'type' => null, 'data' => null, 'width' => '5%', 'thclass' => 'center', 'forced' => '1', 'class' => 'center', 'toggle' => 'e-multiselect',  ),
 		  'coupon_id'         	=>   array ( 'title' => LAN_ID, 'data' => 'int', 'width' => '5%', 'help' => '', 'readParms' => '', 'writeParms' => '', 'class' => 'left', 'thclass' => 'left',  ),
 		  'coupon_active' 		=>   array ( 'title' => LAN_ACTIVE, 'tab' => 0, 'type'=>'boolean', 'data' => 'int', 'inline'=>true, 'width' => '5%', 'help' => '', 'readParms' => '', 'writeParms' => '', 'class' => 'left', 'thclass' => 'left',  ),
-		  'coupon_code'       	=>   array ( 'title' => 'Coupon code', 'tab' => 0, 'type' => 'text', 'data' => 'str', 'width' => 'auto', 'inline' => false, 'help' => 'Enter a unique code for this coupon. Use only uppercase letters and numbers. (no spaces)', 'readParms' => '', 'writeParms'  => array('placeholder' => 'eg. SPECIAL2021', 'size'=>'xxlarge', 'required' => 1, 'pattern'=>'[A-Z0-9]*'), 'class' => 'left', 'thclass' => 'left',  ),
-		  'coupon_type'     	=>   array ( 'title' => 'Discount type', 'tab' => 0, 'type' => 'dropdown', 'data' => 'str', 'width' => 'auto', 'inline' => false, 'help' => 'What kind of discount type will be used for this discount', 'readParms' => '', 'writeParms'  => array('%' => 'Percentage', 'F' => 'Fixed'/* cart', 'I' => 'Fixed item'*/), 'class' => 'left', 'thclass' => 'left',  ),
-		  'coupon_amount'     	=>   array ( 'title' => 'Discount amount', 'tab' => 0, 'type' => 'method', 'data' => 'float', 'width' => 'auto', 'inline' => false, 'help' => 'Define the discount amount', 'readParms' => '', 'writeParms'  => '', 'class' => 'left', 'thclass' => 'left',  ),
-		  'coupon_start'     	=>   array ( 'title' => 'Start date', 'tab' => 1, 'type' => 'datestamp', 'data' => 'int', 'inline' => false, 'help' => 'When should the coupon become available?', 'readParms' => '', 'writeParms'  => array('type'=>'datetime'), 'class' => 'left', 'thclass' => 'left',  ),
-		  'coupon_end'     		=>   array ( 'title' => 'End date', 'tab' => 1, 'type' => 'datestamp', 'data' => 'int', 'width' => 'auto', 'inline' => false, 'help' => 'When will the coupon become unavailable?', 'readParms' => '', 'writeParms'  => array('type'=>'datetime'), 'class' => 'left', 'thclass' => 'left',  ),
-	//	  'coupon_items'     	=>   array ( 'title' => 'Items', 'tab' => 1, 'type' => 'method', 'data' => 'str', 'width' => 'auto', 'inline' => false, 'help' => 'Items this coupon will make use of.', 'readParms' => '', 'writeParms'  => '', 'class' => 'left', 'thclass' => 'left',  ),
-	//	  'coupon_items_ex'    	=>   array ( 'title' => 'Exclude items', 'tab' => 1, 'type' => 'method', 'data' => 'str', 'width' => 'auto', 'inline' => false, 'help' => 'Items this coupon will never make use of', 'readParms' => '', 'writeParms'  => '', 'class' => 'left', 'thclass' => 'left',  ),
+		  'coupon_code'       	=>   array ( 'title' => LAN_VSTORE_ADMIN_2003, 'tab' => 0, 'type' => 'text', 'data' => 'str', 'width' => 'auto', 'inline' => false, 'help' => LAN_VSTORE_ADMIN_2004, 'readParms' => '', 'writeParms'  => array('placeholder' => LAN_VSTORE_ADMIN_2026, 'size'=>'xxlarge', 'required' => 1), 'class' => 'left', 'thclass' => 'left',  ),
+		  'coupon_type'     	=>   array ( 'title' => LAN_VSTORE_ADMIN_2001, 'tab' => 0, 'type' => 'dropdown', 'data' => 'str', 'width' => 'auto', 'inline' => false, 'help' => LAN_VSTORE_ADMIN_2002, 'readParms' => '', 'writeParms'  => array('%' => LAN_VSTORE_ADMIN_2024, 'F' => LAN_VSTORE_ADMIN_2025 /* cart', 'I' => 'Fixed item'*/), 'class' => 'left', 'thclass' => 'left',  ),
+		  'coupon_amount'     	=>   array ( 'title' => LAN_VSTORE_ADMIN_2005, 'tab' => 0, 'type' => 'method', 'data' => 'float', 'width' => 'auto', 'inline' => false, 'help' => LAN_VSTORE_ADMIN_2006, 'readParms' => '', 'writeParms'  => '', 'class' => 'left', 'thclass' => 'left',  ),
+		  'coupon_start'     	=>   array ( 'title' => LAN_VSTORE_ADMIN_2007, 'tab' => 1, 'type' => 'datestamp', 'data' => 'int', 'inline' => false, 'help' => LAN_VSTORE_ADMIN_2008, 'readParms' => '', 'writeParms'  => array('type'=>'datetime'), 'class' => 'left', 'thclass' => 'left',  ),
+		  'coupon_end'     		=>   array ( 'title' => LAN_VSTORE_ADMIN_2009, 'tab' => 1, 'type' => 'datestamp', 'data' => 'int', 'width' => 'auto', 'inline' => false, 'help' => LAN_VSTORE_ADMIN_2010, 'readParms' => '', 'writeParms'  => array('type'=>'datetime'), 'class' => 'left', 'thclass' => 'left',  ),
+  //	  'coupon_items'     	=>   array ( 'title' => LAN_VSTORE_ADMIN_111, 'tab' => 1, 'type' => 'method', 'data' => 'str', 'width' => 'auto', 'inline' => false, 'help' => LAN_VSTORE_ADMIN_2011, 'readParms' => '', 'writeParms'  => '', 'class' => 'left', 'thclass' => 'left',  ),
+  //	  'coupon_items_ex'    	=>   array ( 'title' => LAN_VSTORE_ADMIN_2012, 'tab' => 1, 'type' => 'method', 'data' => 'str', 'width' => 'auto', 'inline' => false, 'help' => LAN_VSTORE_ADMIN_2013, 'readParms' => '', 'writeParms'  => '', 'class' => 'left', 'thclass' => 'left',  ),
 	// todo Add a field to each item. "Eligible for coupons"
-		  'coupon_cats'     	=>   array ( 'title' => 'Categories', 'tab' => 1, 'type' => 'method', 'data' => 'str', 'width' => 'auto', 'inline' => false, 'help' => 'Categories this coupon will be assigned to', 'readParms' => '', 'writeParms'  => '', 'class' => 'left', 'thclass' => 'left',  ),
-		  'coupon_cats_ex'     	=>   array ( 'title' => 'Exclude categories', 'tab' => 1, 'type' => 'method', 'data' => 'str', 'width' => 'auto', 'inline' => false, 'help' => 'Categories this coupon will never be assigned to', 'readParms' => '', 'writeParms'  => '', 'class' => 'left', 'thclass' => 'left',  ),
-		  'coupon_limit_coupon'	=>   array ( 'title' => 'Usage limit per coupon', 'tab' => 2, 'type' => 'method', 'data' => 'str', 'width' => 'auto', 'inline' => false, 'help' => 'How many times this coupon can be used before it is void. Enter -1 for unlimited usage.', 'readParms' => '', 'writeParms'  => '', 'class' => 'left', 'thclass' => 'left',  ),
-		  'coupon_limit_user'	=>   array ( 'title' => 'Usage limit per user', 'tab' => 2, 'type' => 'method', 'data' => 'str', 'width' => 'auto', 'inline' => false, 'help' => 'How many times this coupon can be used by an individual user. Enter -1 for unlimited usage.', 'readParms' => '', 'writeParms'  => '', 'class' => 'left', 'thclass' => 'left',  ),
-		  'coupon_limit_item'	=>   array ( 'title' => 'Limit usage to X items', 'tab' => 2, 'type' => 'method', 'data' => 'str', 'width' => 'auto', 'inline' => false, 'help' => 'The max number of individual items this coupon can apply to when using product discounts. Enter -1 to apply to all qualifying items in cart.', 'readParms' => '', 'writeParms'  => '', 'class' => 'left', 'thclass' => 'left',  ),
+          'coupon_cats'     	=>   array ( 'title' => LAN_VSTORE_ADMIN_2014, 'tab' => 1, 'type' => 'method', 'data' => 'str', 'width' => 'auto', 'inline' => false, 'help' => LAN_VSTORE_ADMIN_2015, 'readParms' => '', 'writeParms'  => '', 'class' => 'left', 'thclass' => 'left',  ),
+		  'coupon_cats_ex'     	=>   array ( 'title' => LAN_VSTORE_ADMIN_2016, 'tab' => 1, 'type' => 'method', 'data' => 'str', 'width' => 'auto', 'inline' => false, 'help' => LAN_VSTORE_ADMIN_2017, 'readParms' => '', 'writeParms'  => '', 'class' => 'left', 'thclass' => 'left',  ),
+		  'coupon_limit_coupon'	=>   array ( 'title' => LAN_VSTORE_ADMIN_2018, 'tab' => 2, 'type' => 'method', 'data' => 'str', 'width' => 'auto', 'inline' => false, 'help' => LAN_VSTORE_ADMIN_2019, 'readParms' => '', 'writeParms'  => '', 'class' => 'left', 'thclass' => 'left',  ),
+		  'coupon_limit_user'	=>   array ( 'title' => LAN_VSTORE_ADMIN_2020, 'tab' => 2, 'type' => 'method', 'data' => 'str', 'width' => 'auto', 'inline' => false, 'help' => LAN_VSTORE_ADMIN_2021, 'readParms' => '', 'writeParms'  => '', 'class' => 'left', 'thclass' => 'left',  ),
+		  'coupon_limit_item'	=>   array ( 'title' => LAN_VSTORE_ADMIN_2022, 'tab' => 2, 'type' => 'method', 'data' => 'str', 'width' => 'auto', 'inline' => false, 'help' => LAN_VSTORE_ADMIN_2023, 'readParms' => '', 'writeParms'  => '', 'class' => 'left', 'thclass' => 'left',  ),
 	
 		  'options'             =>   array ( 'title' => LAN_OPTIONS, 'type' => null, 'data' => null, 'width' => '10%', 'thclass' => 'center last', 'class' => 'center last', 'forced' => '1',  ),
 		);
@@ -64,14 +67,14 @@ class vstore_coupons_ui extends e_admin_ui
 		{
 			if (trim($new_data['coupon_code']) == '') 
 			{
-				e107::getMessage()->addError('Invalid coupon code!');
+				e107::getMessage()->addError(LAN_VSTORE_ADMIN_2030);
 				return false;
 			}
 			$new_data['coupon_code'] = strtoupper(str_replace(' ', '-', trim($new_data['coupon_code'])));
 
 			if(e107::getDb()->select('vstore_coupons', 'coupon_id', 'coupon_code = "'.$new_data['coupon_code'].'"'))
 			{
-				e107::getMessage()->addError('Coupon code already exists!');
+				e107::getMessage()->addError(LAN_VSTORE_ADMIN_2029);
 				return false;
 			}
 
@@ -102,14 +105,14 @@ class vstore_coupons_ui extends e_admin_ui
 			{
 				if (trim($new_data['coupon_code']) == '') 
 				{
-					e107::getMessage()->addError('Invalid coupon code!');
+					e107::getMessage()->addError(LAN_VSTORE_ADMIN_2030);
 					return false;
 				}
 				$new_data['coupon_code'] = strtoupper(str_replace(' ', '-', trim($new_data['coupon_code'])));
 
 				if(e107::getDb()->select('vstore_coupons', 'coupon_id', 'coupon_code = "'.$new_data['coupon_code'].'" AND coupon_id != '.$old_data['coupon_id']))
 				{
-					e107::getMessage()->addError('Coupon code already exists!');
+					e107::getMessage()->addError(LAN_VSTORE_ADMIN_2029);
 					return false;
 				}
 			}

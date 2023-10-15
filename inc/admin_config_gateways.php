@@ -44,28 +44,28 @@ class vstore_gateways_ui extends e_admin_ui
 	protected $prefs = array(
 	//	'gateways'          => array('title'=>'Gateways', 'type'=>'hidden', 'tab' => 'paypal', 'data'=>'str'),
 	/*	'paypal_active'    => array('title' => LAN_ACTIVE, 'type' => 'boolean', 'tab' => 'paypal', 'data' => 'int', 'help' => ''),
-		'paypal_testmode'  => array('title' => "Paypal Testmode", 'type' => 'boolean', 'tab' => 'paypal', 'data' => 'int', 'writeParms' => array(), 'help' => 'Use Paypal Sandbox'),
-		'paypal_username'  => array('title' => "Paypal Username", 'type' => 'text', 'tab' => 'paypal', 'data' => 'str', 'writeParms' => array('size' => 'xxlarge'), 'help' => ''),
-		'paypal_password'  => array('title' => "Paypal Password", 'type' => 'password', 'tab' => 'paypal', 'data' => 'str', 'help' => '', 'writeParms' => array('size' => 'xxlarge')),
-		'paypal_signature' => array('title' => "Paypal Signature", 'type' => 'text', 'tab' => 'paypal', 'data' => 'str', 'help' => '', 'writeParms' => array('size' => 'xxlarge')),
+		'paypal_testmode'  => array('title' => LAN_VSTORE_ADMIN_3077, 'type' => 'boolean', 'tab' => 'paypal', 'data' => 'int', 'writeParms' => array(), 'help' => LAN_VSTORE_ADMIN_3094),
+		'paypal_username'  => array('title' => LAN_VSTORE_ADMIN_3078, 'type' => 'text', 'tab' => 'paypal', 'data' => 'str', 'writeParms' => array('size' => 'xxlarge'), 'help' => ''),
+		'paypal_password'  => array('title' => LAN_VSTORE_ADMIN_3079, 'type' => 'password', 'tab' => 'paypal', 'data' => 'str', 'help' => '', 'writeParms' => array('size' => 'xxlarge')),
+		'paypal_signature' => array('title' => LAN_VSTORE_ADMIN_3080, 'type' => 'text', 'tab' => 'paypal', 'data' => 'str', 'help' => '', 'writeParms' => array('size' => 'xxlarge')),
 
 		'paypal_rest_active'   => array('title' => LAN_ACTIVE, 'type' => 'boolean', 'tab' => 'paypal_rest', 'data' => 'int', 'help' => ''),
-		'paypal_rest_testmode' => array('title' => "Paypal REST Testmode", 'type' => 'boolean', 'tab' => 'paypal_rest', 'data' => 'int', 'writeParms' => array(), 'help' => 'Use Paypal Sandbox'),
-		'paypal_rest_clientId' => array('title' => "Paypal Client Id", 'type' => 'text', 'tab' => 'paypal_rest', 'data' => 'str', 'writeParms' => array('size' => 'xxlarge'), 'help' => ''),
-		'paypal_rest_secret'   => array('title' => "Paypal Secret", 'type' => 'password', 'tab' => 'paypal_rest', 'data' => 'str', 'help' => '', 'writeParms' => array('size' => 'xxlarge')),
+		'paypal_rest_testmode' => array('title' => LAN_VSTORE_ADMIN_3082, 'type' => 'boolean', 'tab' => 'paypal_rest', 'data' => 'int', 'writeParms' => array(), 'help' => LAN_VSTORE_ADMIN_3094),
+		'paypal_rest_clientId' => array('title' => LAN_VSTORE_ADMIN_3083, 'type' => 'text', 'tab' => 'paypal_rest', 'data' => 'str', 'writeParms' => array('size' => 'xxlarge'), 'help' => ''),
+		'paypal_rest_secret'   => array('title' => LAN_VSTORE_ADMIN_3084, 'type' => 'password', 'tab' => 'paypal_rest', 'data' => 'str', 'help' => '', 'writeParms' => array('size' => 'xxlarge')),
 	*/
-		//	'paypal_signature'      => array('title'=>"Paypal Signature", 'type'=>'text', 'tab'=>'paypal', 'data'=>'str', 'help'=>'', 'writeParms'=>array('size'=>'xxlarge')),
+		//	'paypal_signature'      => array('title'=>LAN_VSTORE_ADMIN_3080, 'type'=>'text', 'tab'=>'paypal', 'data'=>'str', 'help'=>'', 'writeParms'=>array('size'=>'xxlarge')),
 
 		'mollie_active'                 => array('title' => LAN_ACTIVE, 'type' => 'boolean', 'tab' => 'mollie', 'data' => 'int', 'help' => ''),
-		'mollie_testmode'               => array('title' => "Mollie Testmode", 'type' => 'boolean', 'tab' => 'mollie', 'data' => 'int', 'writeParms' => array(), 'help' => 'Use Mollie Testmode'),
-		'mollie_api_key_live'           => array('title' => "Mollie Live API key", 'type' => 'text', 'tab' => 'mollie', 'data' => 'str', 'note' => 'Get your api keys <a href="https://www.mollie.com/dashboard/developers/api-keys">here</a>', 'writeParms' => array('size' => 'xxlarge')),
-		'mollie_api_key_test'           => array('title' => "Mollie Test API key", 'type' => 'text', 'tab' => 'mollie', 'data' => 'str', 'note' => '', 'help' => '', 'writeParms' => array('size' => 'xxlarge')),
-		'mollie_payment_methods'        => array('title' => "Mollie Payment methods", 'type' => 'checkboxes', 'tab' => 'mollie', 'data' => 'str', 'note' => 'Select at least 1 payment method.\nThe payment method MUST BE enabled in your Mollie dashoard BEFORE you can use it with vstore!\nBe aware, that not all methods support all currencies!', 'help' => '', 'writeParms' => array('__options' => array('multiple' => true, 'size' => 'xxlarge'))),
+		'mollie_testmode'               => array('title' => LAN_VSTORE_ADMIN_3086, 'type' => 'boolean', 'tab' => 'mollie', 'data' => 'int', 'writeParms' => array(), 'help' => LAN_VSTORE_ADMIN_3093),
+		'mollie_api_key_live'           => array('title' => LAN_VSTORE_ADMIN_3087, 'type' => 'text', 'tab' => 'mollie', 'data' => 'str', 'note' => ''.LAN_VSTORE_ADMIN_3088.' <a href="https://www.mollie.com/dashboard/developers/api-keys">'.LAN_VSTORE_ADMIN_3092.'</a>', 'writeParms' => array('size' => 'xxlarge')),
+		'mollie_api_key_test'           => array('title' => LAN_VSTORE_ADMIN_3089, 'type' => 'text', 'tab' => 'mollie', 'data' => 'str', 'note' => '', 'help' => '', 'writeParms' => array('size' => 'xxlarge')),
+		'mollie_payment_methods'        => array('title' => LAN_VSTORE_ADMIN_3090, 'type' => 'checkboxes', 'tab' => 'mollie', 'data' => 'str', 'note' => LAN_VSTORE_ADMIN_3091, 'help' => '', 'writeParms' => array('__options' => array('multiple' => true, 'size' => 'xxlarge'))),
 
 		'gateways/bank_transfer/active' => array('title' => LAN_ACTIVE, 'type' => 'boolean', 'tab' => 'bank_transfer', 'data' => 'int', 'help' => ''),
-		'gateways/bank_transfer/title'  => array('title' => LAN_TITLE, 'type' => 'text', 'tab' => 'bank_transfer',  'data' => 'str', 'writeParms' => array('size'=>'xxlarge', 'default'=>'Bank Transfer')),
+		'gateways/bank_transfer/title'  => array('title' => LAN_TITLE, 'type' => 'text', 'tab' => 'bank_transfer',  'data' => 'str', 'writeParms' => array('size'=>'xxlarge', 'default'=>LAN_VSTORE_4040)),
 		'gateways/bank_transfer/icon'   => array('title' => LAN_ICON, 'type' => 'icon', 'tab' => 'bank_transfer', 'data' => 'str', 'help' => '', 'writeParms'=>array('default'=>'fa-bank.glyph')),
-		'gateways/bank_transfer/details' => array('title' => "Bank Transfer", 'type' => 'textarea', 'tab' => 'bank_transfer', 'data' => 'str', 'writeParms' => array('placeholder' => "Bank Account Details"), 'help' => ''),
+		'gateways/bank_transfer/details' => array('title' => LAN_VSTORE_4041, 'type' => 'textarea', 'tab' => 'bank_transfer', 'data' => 'str', 'writeParms' => array('placeholder' => LAN_VSTORE_4041), 'help' => ''),
 
 	);
 
@@ -136,6 +136,37 @@ class vstore_gateways_ui extends e_admin_ui
 	}
 
 
+	private function getGatewayPackageList()
+	{
+		$composerData = include(e_PLUGIN.'vstore/vendor/composer/autoload_psr4.php');
+
+		unset(
+			$composerData['Omnipay\Common\\'],
+			$composerData['Omnipay\PayPal\\'],
+			$composerData['Omnipay\Mollie\\'],
+			);
+
+		$list = [];
+		foreach($composerData as $package => $path)
+		{
+			if(strpos($package, 'Omnipay\\') === 0)
+			{
+				$tmp = explode('\\', $package);
+				if(isset($tmp[1]))
+				{
+					$key = strtolower($tmp[1]);
+					$list[$key] = ($tmp[1]);
+				}
+			}
+		}
+
+
+		return $list;
+
+	}
+
+
+
 	private function getAvailableGateways()
 	{
 		$path = e_PLUGIN . "vstore/vendor/";
@@ -163,7 +194,7 @@ class vstore_gateways_ui extends e_admin_ui
 			$list[$key] = array('name' => $name, 'title' => $title, 'parms' => $parms, 'icon'=> $icon);
 		}
 
-		$packages = vstore::getGatewayPackageList();
+		$packages = $this->getGatewayPackageList();
 
 		$defaultIcons = array(
 			'coinpayments'  => 'fa-bitcoin.glyph',
