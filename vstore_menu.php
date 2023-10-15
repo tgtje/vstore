@@ -52,7 +52,7 @@ $vst = new vstore;
 $category = vartrue($vstore_prefs['menu_cat'], 1);
 $num_items = vartrue($vstore_prefs['menu_item_count'], 2);
 
-$caption = "Products";
+$caption = LAN_VSTORE_ADMIN_002;
 
 $text = $vst->productList($category, false, 'menu', $num_items);
 

@@ -22,7 +22,7 @@ $tp = e107::getParser();
 $sc = new plugin_vstore_vstore_shortcodes;
 $vst = new vstore_sitelink;
 
-$caption = "Vstore Categories";
+$caption = LAN_VSTORE_004;
 
 $items = $vst->storeCategories();
 

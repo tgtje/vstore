@@ -9,6 +9,8 @@
  *
  */
 
+e107::lan('vstore',true, true);
+
 class vstore_cron       // plugin-folder name + '_cron'.
 {
     function config() // Setup
@@ -19,7 +21,7 @@ class vstore_cron       // plugin-folder name + '_cron'.
             'name'            => "Vstore - Purge cart",  // Displayed in admin area. .
             'function'        => "purgeCart",    // Name of the function which is defined below.
             'category'        => 'content',           // Choose between: mail, user, content, notify, or backup
-            'description'     => "Delete cart entries, that haven't been touched for 2 days"  // Displayed in admin area.
+            'description'     => LAN_VSTORE_ADMIN_090  // Displayed in admin area.
         );
 
         return $cron;
